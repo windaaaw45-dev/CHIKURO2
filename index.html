@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="CHIKURO - Ayam crispy lezat, berkualitas, dan terjangkau.">
+
+    <title>CHIKURO - Makanan Crispy</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="siuu.jpeg">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffaf5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 15px 8%;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            color: #ff6500;
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6500;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 600px;
+
+            padding: 70px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff3e6,
+                    #ffffff
+                );
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            color: #ff6500;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h3 {
+            font-size: 55px;
+            line-height: 1.15;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 420px;
+            height: 420px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 10px solid #fff;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn {
+            display: inline-block;
+
+            background: #ff6500;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 14px 28px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e45500;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           PROMO
+        ========================= */
+
+        .promo {
+            padding: 55px 8%;
+
+            text-align: center;
+
+            background: #ff6500;
+            color: white;
+        }
+
+        .promo h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .promo p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .promo .btn {
+            background: white;
+            color: #ff6500;
+        }
+
+        .promo .btn:hover {
+            background: #fff1e8;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu {
+            padding: 70px 8%;
+
+            text-align: center;
+        }
+
+        .menu > h2 {
+            color: #ff6500;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .menu > p {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .produk {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.13);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #777;
+
+            min-height: 55px;
+
+            margin-bottom: 10px;
+        }
+
+        .card h4 {
+            color: #ff6500;
+
+            font-size: 21px;
+
+            margin-bottom: 18px;
+        }
+
+        .pesan-btn {
+            width: 100%;
+
+            background: #ff6500;
+            color: white;
+
+            border: none;
+
+            padding: 13px 20px;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .pesan-btn:hover {
+            background: #e45500;
+        }
+
+
+        /* =========================
+           KEUNGGULAN
+        ========================= */
+
+        .keunggulan {
+            padding: 70px 8%;
+
+            text-align: center;
+
+            background: #fff1e5;
+        }
+
+        .keunggulan h2 {
+            color: #ff6500;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .keunggulan-list {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .keunggulan-list > div {
+            background: white;
+
+            padding: 30px 20px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .keunggulan-list h3 {
+            color: #ff6500;
+
+            margin-bottom: 8px;
+        }
+
+        .keunggulan-list p {
+            color: #777;
+        }
+
+
+        /* =========================
+           KERANJANG
+        ========================= */
+
+        .keranjang {
+            padding: 70px 8%;
+
+            background: #fff8f0;
+
+            text-align: center;
+        }
+
+        .keranjang h2 {
+            color: #d35400;
+
+            margin-bottom: 30px;
+        }
+
+        #isiKeranjang {
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+        .keranjang-kosong {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            color: #777;
+        }
+
+        .item-keranjang {
+            background: white;
+
+            margin: 15px auto;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .item-info {
+            flex: 1;
+
+            text-align: left;
+        }
+
+        .item-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            color: #777;
+        }
+
+        .jumlah {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .jumlah button {
+            width: 35px;
+            height: 35px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #ff7a00;
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+        .jumlah button:hover {
+            background: #e56700;
+        }
+
+        .jumlah span {
+            min-width: 25px;
+
+            font-weight: bold;
+        }
+
+        .subtotal {
+            min-width: 130px;
+
+            font-weight: bold;
+        }
+
+        .hapus-btn {
+            border: none;
+
+            background: #ff4444;
+            color: white;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+
+        .hapus-btn:hover {
+            background: #d93636;
+        }
+
+
+        /* =========================
+           DATA PELANGGAN
+        ========================= */
+
+        .data-pelanggan {
+            max-width: 700px;
+
+            margin: 40px auto 0;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            text-align: left;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .data-pelanggan h3 {
+            color: #ff6500;
+
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff6500;
+
+            box-shadow:
+                0 0 0 2px rgba(255, 101, 0, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+
+            resize: vertical;
+        }
+
+
+        /* =========================
+           TOTAL
+        ========================= */
+
+        .total {
+            max-width: 700px;
+
+            margin: 25px auto;
+
+            padding: 25px;
+
+            background: white;
+
+            border-radius: 15px;
+        }
+
+        .total-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            font-size: 17px;
+        }
+
+        .total-row.diskon {
+            color: #159447;
+
+            font-weight: bold;
+        }
+
+        .total-final {
+            border-top: 1px solid #ddd;
+
+            padding-top: 15px;
+
+            margin-top: 15px;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            color: #ff6500;
+        }
+
+        .checkout-btn {
+            background: #25D366;
+
+            color: white;
+
+            border: none;
+
+            padding: 15px 25px;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: #1ebe5d;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           KONTAK
+        ========================= */
+
+        .kontak {
+            padding: 70px 8%;
+
+            text-align: center;
+
+            background: white;
+        }
+
+        .kontak h2 {
+            color: #ff6500;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .kontak > p {
+            color: #777;
+
+            margin-bottom: 35px;
+        }
+
+        .kontak-list {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .kontak-card {
+            background: #fff8f0;
+
+            padding: 25px;
+
+            border-radius: 15px;
+        }
+
+        .kontak-card h3 {
+            color: #ff6500;
+
+            margin-bottom: 8px;
+        }
+
+        .kontak-card p,
+        .kontak-card a {
+            color: #555;
+
+            text-decoration: none;
+        }
+
+        .kontak-card a:hover {
+            color: #ff6500;
+        }
+
+
+        /* =========================
+           TOMBOL SOSIAL MEDIA
+        ========================= */
+
+        .social {
+            padding: 30px 8%;
+
+            text-align: center;
+
+            background: #fff8f0;
+        }
+
+        .social-btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 9px;
+
+            margin: 5px;
+
+            font-weight: bold;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .instagram-btn {
+            background:
+                linear-gradient(
+                    45deg,
+                    #f09433,
+                    #e6683c,
+                    #dc2743,
+                    #cc2366,
+                    #bc1888
+                );
+        }
+
+        .social-btn:hover {
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           NOTIFIKASI
+        ========================= */
+
+        .notifikasi {
+            position: fixed;
+
+            top: 90px;
+
+            right: 20px;
+
+            background: #25D366;
+
+            color: white;
+
+            padding: 14px 20px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.15);
+
+            z-index: 2000;
+
+            opacity: 0;
+
+            transform: translateX(120%);
+
+            transition: 0.4s;
+
+            font-weight: bold;
+        }
+
+        .notifikasi.show {
+            opacity: 1;
+
+            transform: translateX(0);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 40px 8%;
+
+            text-align: center;
+
+            background: #222;
+
+            color: white;
+        }
+
+        footer h2 {
+            color: #ff6500;
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #bbb;
+        }
+
+
+        /* =========================
+           RESPONSIVE TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .produk {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .keunggulan-list,
+            .kontak-list {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 12px 5%;
+            }
+
+            .logo h1 {
+                font-size: 21px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 50px 5%;
+            }
+
+            .hero-text h3 {
+                font-size: 40px;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .promo,
+            .menu,
+            .keunggulan,
+            .keranjang,
+            .kontak {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .produk,
+            .keunggulan-list,
+            .kontak-list {
+                grid-template-columns: 1fr;
+            }
+
+            .item-keranjang {
+                flex-direction: column;
+
+                align-items: stretch;
+
+                text-align: center;
+            }
+
+            .item-info {
+                text-align: center;
+            }
+
+            .jumlah {
+                justify-content: center;
+            }
+
+            .subtotal {
+                text-align: center;
+            }
+
+            .hapus-btn {
+                width: 100%;
+            }
+
+            .data-pelanggan {
+                padding: 20px;
+            }
+
+            .total-row {
+                font-size: 15px;
+            }
+
+            .checkout-btn {
+                width: 100%;
+            }
+
+            .notifikasi {
+                left: 20px;
+
+                right: 20px;
+
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NOTIFIKASI
+========================= -->
+
+<div id="notifikasi" class="notifikasi">
+    Produk berhasil ditambahkan!
+</div>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        <img
+            src="siuu.jpeg"
+            alt="Logo Chikuro">
+
+        <h1>CHIKURO</h1>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#menu">
+            Menu
+        </a>
+
+        <a href="#promo">
+            Promo
+        </a>
+
+        <a href="#kontak">
+            Kontak
+        </a>
+
+        <a href="#keranjang">
+            🛒 Keranjang
+            (<span id="jumlahKeranjang">0</span>)
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home">
+
+    <div class="hero-text">
+
+        <h2>
+            CHIKURO
+        </h2>
+
+        <h3>
+            Crispy, Lezat,<br>
+            Bikin Nagih!
+        </h3>
+
+        <p>
+            Nikmati ayam crispy dengan rasa
+            yang lezat, renyah, berkualitas,
+            dan harga bersahabat.
+        </p>
+
+        <a
+            href="#menu"
+            class="btn">
+
+            LIHAT MENU
+
+        </a>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="siuu.jpeg"
+            alt="Ayam Crispy Chikuro">
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROMO
+========================= -->
+
+<section
+    class="promo"
+    id="promo">
+
+    <h2>
+        🔥 PROMO SPESIAL 🔥
+    </h2>
+
+    <p>
+        Beli minimal <b>2 item</b>
+        dan dapatkan
+        <b>diskon 10%</b>!
+    </p>
+
+    <a
+        href="#menu"
+        class="btn">
+
+        PESAN SEKARANG
+
+    </a>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section
+    class="menu"
+    id="menu">
+
+    <h2>
+        MENU FAVORIT
+    </h2>
+
+    <p>
+        Pilih makanan favorit kamu!
+    </p>
+
+
+    <div class="produk">
+
+
+        <!-- PRODUK 1 -->
+
+        <div class="card">
+
+            <img
+                src="original.jpeg"
+                alt="Chikuro Original">
+
+            <h3>
+                Chikuro Original
+            </h3>
+
+            <p>
+                Ayam crispy dengan bumbu
+                original khas Chikuro.
+            </p>
+
+            <h4>
+                Rp15.000
+            </h4>
+
+            <button
+                class="pesan-btn"
+                onclick="tambahKeranjang(
+                    'Chikuro Original',
+                    15000
+                )">
+
+                🛒 Tambah ke Keranjang
+
+            </button>
+
+        </div>
+
+
+        <!-- PRODUK 2 -->
+
+        <div class="card">
+
+            <img
+                src="spicy.jpeg"
+                alt="Chikuro Spicy">
+
+            <h3>
+                Chikuro Spicy
+            </h3>
+
+            <p>
+                Ayam crispy dengan saus
+                pedas yang menggugah selera.
+            </p>
+
+            <h4>
+                Rp18.000
+            </h4>
+
+            <button
+                class="pesan-btn"
+                onclick="tambahKeranjang(
+                    'Chikuro Spicy',
+                    18000
+                )">
+
+                🛒 Tambah ke Keranjang
+
+            </button>
+
+        </div>
+
+
+        <!-- PRODUK 3 -->
+
+        <div class="card">
+
+            <img
+                src="chesee.jpeg"
+                alt="Chikuro Cheese">
+
+            <h3>
+                Chikuro Cheese
+            </h3>
+
+            <p>
+                Ayam crispy dengan saus
+                keju yang creamy dan lezat.
+            </p>
+
+            <h4>
+                Rp20.000
+            </h4>
+
+            <button
+                class="pesan-btn"
+                onclick="tambahKeranjang(
+                    'Chikuro Cheese',
+                    20000
+                )">
+
+                🛒 Tambah ke Keranjang
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KEUNGGULAN
+========================= -->
+
+<section class="keunggulan">
+
+    <h2>
+        Kenapa Pilih Chikuro?
+    </h2>
+
+
+    <div class="keunggulan-list">
+
+        <div>
+
+            <h3>
+                🍗 Enak
+            </h3>
+
+            <p>
+                Rasa lezat dan crispy
+                di setiap gigitan.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                ✨ Berkualitas
+            </h3>
+
+            <p>
+                Menggunakan bahan makanan
+                berkualitas.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                💰 Terjangkau
+            </h3>
+
+            <p>
+                Harga ramah di kantong
+                untuk semua kalangan.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KERANJANG
+========================= -->
+
+<section
+    class="keranjang"
+    id="keranjang">
+
+    <h2>
+        🛒 KERANJANG PESANAN
+    </h2>
+
+
+    <div id="isiKeranjang">
+
+        <div class="keranjang-kosong">
+            Keranjang masih kosong.
+        </div>
+
+    </div>
+
+
+    <!-- DATA PELANGGAN -->
+
+    <div class="data-pelanggan">
+
+        <h3>
+            👤 Data Pemesan
+        </h3>
+
+
+        <div class="form-group">
+
+            <label for="nama">
+                Nama
+            </label>
+
+            <input
+                type="text"
+                id="nama"
+                placeholder="Masukkan nama kamu">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="telepon">
+                Nomor WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="telepon"
+                placeholder="Contoh: 089xxxxxxxxx">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="alamat">
+                Alamat Pengantaran
+            </label>
+
+            <textarea
+                id="alamat"
+                placeholder="Masukkan alamat lengkap"></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="catatan">
+                Catatan Pesanan
+            </label>
+
+            <textarea
+                id="catatan"
+                placeholder="Contoh: Tidak pedas, saus dipisah, dll."></textarea>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOTAL -->
+
+    <div class="total">
+
+        <div class="total-row">
+
+            <span>
+                Subtotal
+            </span>
+
+            <span id="subtotalHarga">
+                Rp0
+            </span>
+
+        </div>
+
+
+        <div
+            class="total-row diskon">
+
+            <span>
+                🎉 Diskon 10%
+            </span>
+
+            <span id="diskonHarga">
+                Rp0
+            </span>
+
+        </div>
+
+
+        <div
+            class="total-row total-final">
+
+            <span>
+                Total
+            </span>
+
+            <span id="totalHarga">
+                Rp0
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="checkout-btn"
+        onclick="checkoutWhatsApp()">
+
+        📱 PESAN VIA WHATSAPP
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     KONTAK
+========================= -->
+
+<section
+    class="kontak"
+    id="kontak">
+
+    <h2>
+        📞 HUBUNGI CHIKURO
+    </h2>
+
+    <p>
+        Ada pertanyaan atau ingin melakukan pemesanan?
+        Hubungi kami melalui kontak berikut.
+    </p>
+
+
+    <div class="kontak-list">
+
+
+        <div class="kontak-card">
+
+            <h3>
+                📱 WhatsApp
+            </h3>
+
+            <p>
+                0895-3263-07593
+            </p>
+
+        </div>
+
+
+        <div class="kontak-card">
+
+            <h3>
+                📸 Instagram
+            </h3>
+
+            <a
+                href="https://www.instagram.com/naysiawardaniiah/"
+                target="_blank">
+
+                @naysiawardaniiah
+
+            </a>
+
+        </div>
+
+
+        <div class="kontak-card">
+
+            <h3>
+                🕐 Jam Buka
+            </h3>
+
+            <p>
+                Setiap Hari<br>
+                10.00 - 21.00 WIB
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOCIAL BUTTON
+========================= -->
+
+<section class="social">
+
+    <a
+        class="social-btn whatsapp-btn"
+        href="https://wa.me/62895326307593?text=Halo%20Chikuro,%20saya%20ingin%20memesan."
+        target="_blank">
+
+        📱 HUBUNGI VIA WHATSAPP
+
+    </a>
+
+
+    <a
+        class="social-btn instagram-btn"
+        href="https://www.instagram.com/naysiawardaniiah/"
+        target="_blank">
+
+        📸 BUKA INSTAGRAM
+
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        CHIKURO
+    </h2>
+
+    <p>
+        Crispy, Lezat, Bikin Nagih! 🍗
+    </p>
+
+    <p>
+        © 2026 Chikuro Food.
+        Semua Hak Dilindungi.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       DATA KERANJANG
+    ========================= */
+
+    let keranjang =
+        JSON.parse(
+            localStorage.getItem("keranjangChikuro")
+        ) || [];
+
+
+    /* =========================
+       FORMAT RUPIAH
+    ========================= */
+
+    function formatRupiah(angka) {
+
+        return new Intl.NumberFormat(
+            "id-ID",
+            {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0
+            }
+        ).format(angka);
+
+    }
+
+
+    /* =========================
+       SIMPAN KERANJANG
+    ========================= */
+
+    function simpanKeranjang() {
+
+        localStorage.setItem(
+            "keranjangChikuro",
+            JSON.stringify(keranjang)
+        );
+
+    }
+
+
+    /* =========================
+       TAMBAH KERANJANG
+    ========================= */
+
+    function tambahKeranjang(
+        nama,
+        harga
+    ) {
+
+        let produk =
+            keranjang.find(
+                item => item.nama === nama
+            );
+
+
+        if (produk) {
+
+            produk.jumlah++;
+
+        } else {
+
+            keranjang.push({
+
+                nama: nama,
+
+                harga: harga,
+
+                jumlah: 1
+
+            });
+
+        }
+
+
+        simpanKeranjang();
+
+        tampilkanKeranjang();
+
+        tampilkanNotifikasi(
+            nama + " berhasil ditambahkan! 🛒"
+        );
+
+    }
+
+
+    /* =========================
+       TAMBAH JUMLAH
+    ========================= */
+
+    function tambahJumlah(index) {
+
+        keranjang[index].jumlah++;
+
+        simpanKeranjang();
+
+        tampilkanKeranjang();
+
+    }
+
+
+    /* =========================
+       KURANG JUMLAH
+    ========================= */
+
+    function kurangJumlah(index) {
+
+        keranjang[index].jumlah--;
+
+
+        if (
+            keranjang[index].jumlah <= 0
+        ) {
+
+            keranjang.splice(index, 1);
+
+        }
+
+
+        simpanKeranjang();
+
+        tampilkanKeranjang();
+
+    }
+
+
+    /* =========================
+       HAPUS PRODUK
+    ========================= */
+
+    function hapusProduk(index) {
+
+        keranjang.splice(index, 1);
+
+        simpanKeranjang();
+
+        tampilkanKeranjang();
+
+    }
+
+
+    /* =========================
+       NOTIFIKASI
+    ========================= */
+
+    function tampilkanNotifikasi(
+        pesan
+    ) {
+
+        let notifikasi =
+            document.getElementById(
+                "notifikasi"
+            );
+
+
+        notifikasi.innerText = pesan;
+
+        notifikasi.classList.add("show");
+
+
+        setTimeout(
+            function () {
+
+                notifikasi.classList.remove(
+                    "show"
+                );
+
+            },
+            2000
+        );
+
+    }
+
+
+    /* =========================
+       TAMPILKAN KERANJANG
+    ========================= */
+
+    function tampilkanKeranjang() {
+
+        let isi =
+            document.getElementById(
+                "isiKeranjang"
+            );
+
+        let jumlahKeranjang =
+            document.getElementById(
+                "jumlahKeranjang"
+            );
+
+        let subtotalHarga =
+            document.getElementById(
+                "subtotalHarga"
+            );
+
+        let diskonHarga =
+            document.getElementById(
+                "diskonHarga"
+            );
+
+        let totalHarga =
+            document.getElementById(
+                "totalHarga"
+            );
+
+
+        isi.innerHTML = "";
+
+
+        let subtotal = 0;
+
+        let jumlahItem = 0;
+
+
+        /* =========================
+           KERANJANG KOSONG
+        ========================= */
+
+        if (
+            keranjang.length === 0
+        ) {
+
+            isi.innerHTML = `
+                <div class="keranjang-kosong">
+                    🛒 Keranjang masih kosong.<br>
+                    Yuk pilih menu favorit kamu!
+                </div>
+            `;
+
+        }
+
+
+        /* =========================
+           ISI KERANJANG
+        ========================= */
+
+        else {
+
+            keranjang.forEach(
+                (item, index) => {
+
+                    let sub =
+                        item.harga *
+                        item.jumlah;
+
+
+                    subtotal += sub;
+
+                    jumlahItem +=
+                        item.jumlah;
+
+
+                    isi.innerHTML += `
+
+                        <div
+                            class="item-keranjang">
+
+                            <div
+                                class="item-info">
+
+                                <h3>
+                                    ${item.nama}
+                                </h3>
+
+                                <p>
+                                    ${formatRupiah(item.harga)}
+                                    / item
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="jumlah">
+
+                                <button
+                                    onclick="kurangJumlah(${index})">
+
+                                    −
+
+                                </button>
+
+                                <span>
+                                    ${item.jumlah}
+                                </span>
+
+                                <button
+                                    onclick="tambahJumlah(${index})">
+
+                                    +
+
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="subtotal">
+
+                                ${formatRupiah(sub)}
+
+                            </div>
+
+
+                            <button
+                                class="hapus-btn"
+                                onclick="hapusProduk(${index})">
+
+                                🗑️
+
+                            </button>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+        }
+
+
+        /* =========================
+           PROMO
+        ========================= */
+
+        let diskon = 0;
+
+
+        /*
+            Promo aktif jika membeli
+            minimal 2 item.
+        */
+
+        if (
+            jumlahItem >= 2
+        ) {
+
+            diskon =
+                subtotal * 0.10;
+
+        }
+
+
+        let total =
+            subtotal - diskon;
+
+
+        subtotalHarga.innerText =
+            formatRupiah(subtotal);
+
+
+        diskonHarga.innerText =
+            formatRupiah(diskon);
+
+
+        totalHarga.innerText =
+            formatRupiah(total);
+
+
+        jumlahKeranjang.innerText =
+            jumlahItem;
+
+    }
+
+
+    /* =========================
+       CHECKOUT WHATSAPP
+    ========================= */
+
+    function checkoutWhatsApp() {
+
+
+        /* CEK KERANJANG */
+
+        if (
+            keranjang.length === 0
+        ) {
+
+            alert(
+                "Keranjang masih kosong! Silakan pilih menu terlebih dahulu."
+            );
+
+            return;
+
+        }
+
+
+        /* AMBIL DATA */
+
+        let nama =
+            document
+                .getElementById("nama")
+                .value
+                .trim();
+
+
+        let telepon =
+            document
+                .getElementById("telepon")
+                .value
+                .trim();
+
+
+        let alamat =
+            document
+                .getElementById("alamat")
+                .value
+                .trim();
+
+
+        let catatan =
+            document
+                .getElementById("catatan")
+                .value
+                .trim();
+
+
+        /* VALIDASI */
+
+        if (!nama) {
+
+            alert(
+                "Silakan masukkan nama kamu."
+            );
+
+            document
+                .getElementById("nama")
+                .focus();
+
+            return;
+
+        }
+
+
+        if (!telepon) {
+
+            alert(
+                "Silakan masukkan nomor WhatsApp."
+            );
+
+            document
+                .getElementById("telepon")
+                .focus();
+
+            return;
+
+        }
+
+
+        if (!alamat) {
+
+            alert(
+                "Silakan masukkan alamat pengantaran."
+            );
+
+            document
+                .getElementById("alamat")
+                .focus();
+
+            return;
+
+        }
+
+
+        /* =========================
+           HITUNG TOTAL
+        ========================= */
+
+        let subtotal = 0;
+
+        let jumlahItem = 0;
+
+
+        keranjang.forEach(
+            item => {
+
+                subtotal +=
+                    item.harga *
+                    item.jumlah;
+
+                jumlahItem +=
+                    item.jumlah;
+
+            }
+        );
+
+
+        let diskon = 0;
+
+
+        if (
+            jumlahItem >= 2
+        ) {
+
+            diskon =
+                subtotal * 0.10;
+
+        }
+
+
+        let total =
+            subtotal - diskon;
+
+
+        /* =========================
+           BUAT PESAN
+        ========================= */
+
+        let pesan =
+            "Halo Chikuro! 👋\n\n";
+
+
+        pesan +=
+            "Saya ingin memesan:\n\n";
+
+
+        keranjang.forEach(
+            item => {
+
+                let sub =
+                    item.harga *
+                    item.jumlah;
+
+
+                pesan +=
+                    "🍗 " +
+                    item.nama +
+                    " x" +
+                    item.jumlah +
+                    " = " +
+                    formatRupiah(sub) +
+                    "\n";
+
+            }
+        );
+
+
+        pesan +=
+            "\n--------------------\n";
+
+
+        pesan +=
+            "Subtotal: " +
+            formatRupiah(subtotal) +
+            "\n";
+
+
+        if (
+            diskon > 0
+        ) {
+
+            pesan +=
+                "Diskon 10%: -" +
+                formatRupiah(diskon) +
+                "\n";
+
+        }
+
+
+        pesan +=
+            "💰 Total: " +
+            formatRupiah(total) +
+            "\n";
+
+
+        pesan +=
+            "--------------------\n\n";
+
+
+        pesan +=
+            "👤 Data Pemesan\n";
+
+
+        pesan +=
+            "Nama: " +
+            nama +
+            "\n";
+
+
+        pesan +=
+            "WhatsApp: " +
+            telepon +
+            "\n";
+
+
+        pesan +=
+            "📍 Alamat: " +
+            alamat +
+            "\n";
+
+
+        if (
+            catatan
+        ) {
+
+            pesan +=
+                "📝 Catatan: " +
+                catatan +
+                "\n";
+
+        }
+
+
+        pesan +=
+            "\nTerima kasih! 🙏";
+
+
+        /* =========================
+           NOMOR WHATSAPP CHIKURO
+        ========================= */
+
+        let nomorWhatsApp =
+            "62895326307593";
+
+
+        /* =========================
+           ENCODE PESAN
+        ========================= */
+
+        let url =
+            "https://wa.me/" +
+            nomorWhatsApp +
+            "?text=" +
+            encodeURIComponent(
+                pesan
+            );
+
+
+        /* =========================
+           BUKA WHATSAPP
+        ========================= */
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
+
+    /* =========================
+       LOAD SAAT WEBSITE DIBUKA
+    ========================= */
+
+    tampilkanKeranjang();
+
+</script>
+
+
+</body>
+</html>
